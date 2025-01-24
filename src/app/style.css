@@ -1,0 +1,10 @@
+.form-control::placeholder{
+    font-size: 14px;
+    color: rgb(128, 128, 128, 0.7);
+}
+
+table tbody td,
+table thead th {
+    font-size: 16px;
+    padding: 8px 16px;
+}
