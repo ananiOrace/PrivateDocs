@@ -30,7 +30,7 @@ export default function Dashboard({ children }: { children: ReactNode}) {
             </div>
 
             {/* desktop */}
-            <div className="d-none d-md-block">
+            <div className="d-none d-md-block" style={{ width: '80px' }}>
                 <Sidebar />
             </div>
 

@@ -2,6 +2,7 @@ import Table from "@/app/components/dashboard/tables"
 import { organizationsData, orgHeader } from "@/app/constants"
 import { DashboardHeader } from "@/app/components/dashboard/dashboardHeader"
 import FloatingLabelInput from "@/app/components/floatingLabelInput"
+import * as Form from "@radix-ui/react-form"
 
 export default function Buildings () {
     return(
@@ -12,12 +13,12 @@ export default function Buildings () {
                 title2="Ajouter une organisation" 
                 searchBar="Rechercher une organisation" 
                 addModalContent={
-                    <div>
+                    <Form.Root>
                         <FloatingLabelInput label="Nom de l'entreprise" placeholder="Nom de l'entreprise" type="text" /> 
                         <FloatingLabelInput label="Nom" placeholder="Nom de l'admin" type="text" /> 
                         <FloatingLabelInput label="Prénom" placeholder="Prénom de l'admin" type="text" /> 
                         <FloatingLabelInput label="Email" placeholder="Adresse e-mail de l'admin" type="email" />
-                    </div>
+                    </Form.Root>
                 }
                 addModalButton="Ajouter une organisation"
             />

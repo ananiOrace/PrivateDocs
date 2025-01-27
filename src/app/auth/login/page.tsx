@@ -4,6 +4,7 @@ import * as Form from '@radix-ui/react-form';
 import Header from '../../components/header';
 import '@/app/style.css';
 import FloatingLabelInput from '@/app/components/floatingLabelInput';
+import Link from 'next/link';
 
 export default function LoginPage() {
 
@@ -37,7 +38,9 @@ export default function LoginPage() {
                 <button 
                   className="btn btn-primary rounded-pill w-50"
                 >
-                  Se connecter
+                  <Link className='text-white' style={{ textDecoration: 'none' }} href={'/dashboard'}>
+                    Se connecter
+                  </Link>
                 </button>
               </Form.Submit>
             </div>

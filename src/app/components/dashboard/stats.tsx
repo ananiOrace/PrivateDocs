@@ -3,7 +3,7 @@ import { statsType } from "@/app/types"
 
 export default function Stats({ datas }: { datas: statsType[]}) {
     return(
-        <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 gap-lg-0 gap-md-1 gap-sm-4">
+        <div className="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-4 gap-lg-0 gap-md-0 gap-sm-3">
                 {/* stats */}
                     {datas.map(({ id, title, value, icon,}) => (
                         <div key={id} className="col pb-md-2">

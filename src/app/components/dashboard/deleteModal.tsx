@@ -1,7 +1,9 @@
 import * as Dialog from "@radix-ui/react-dialog";
 import { Cross1Icon, TrashIcon } from "@radix-ui/react-icons";
+import { DeleteModalProps } from "@/app/types";
 
-export function DeleteModal({ title, content, name } : {title: string, content: string, name: string }) {
+
+export function DeleteModal({ title, content, name, onDelete } : DeleteModalProps) {
     return(
         <Dialog.Root>
             <Dialog.Trigger asChild>
@@ -20,12 +22,12 @@ export function DeleteModal({ title, content, name } : {title: string, content: 
 
                     <div className="d-flex justify-content-center gap-3 mt-3">
                         <Dialog.Close className="bg-primary bg-opacity-25 text-secondary p-2 fs-5 w-50 w-md-25 rounded-pill text-center">
-                            <button>
-                                Annuler
-                            </button>
+                            Annuler
                         </Dialog.Close>
 
-                        <button className="bg-danger text-white p-2 fs-5 rounded-pill w-50 text-center">
+                        <button className="bg-danger text-white p-2 fs-5 rounded-pill w-50 text-center"
+                            onClick={onDelete}
+                        >
                             Supprimer
                         </button>
                     </div>
