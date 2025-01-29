@@ -1,7 +1,8 @@
 import "./globals.css";
 import '@radix-ui/themes/styles.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Providers } from './providers';
+import { ProviderBootstrap } from './providers';
+import Toast from "@/components/toast";
 import localFont from "next/font/local"
 
 const globalFont = localFont({
@@ -18,9 +19,10 @@ export default function RootLayout({
       <body
         className={`${globalFont.className}`}
       >
-        <Providers>
+        <ProviderBootstrap>
           {children}
-        </Providers>
+          <Toast />
+        </ProviderBootstrap>
       </body>
     </html>
   );

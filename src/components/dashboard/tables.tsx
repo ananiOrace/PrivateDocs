@@ -11,6 +11,7 @@ import { DeleteModal } from "./deleteModal";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { toast } from "sonner";
 
 
 export default function Table({ 
@@ -23,14 +24,9 @@ export default function Table({
     const [editingItem, setEditingItem] = useState<TableDataItem | null>(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
 
-    function convert (data: any) {
-        if(typeof data === 'string') return data;
-        if(typeof data === 'number') return data.toString();
-        if(typeof data === 'boolean') return data.toString();
-    }
-
     const handleDelete = (itemId: number) => {
         setData(data.filter(item => item.id !== itemId))
+        toast.success('Supression Réussie')
     }
 
     const handleEdit = (item: TableDataItem, updatedValues: Partial<TableDataItem>) => {
@@ -40,6 +36,7 @@ export default function Table({
         setData(upadatedData)
         setEditingItem(null)
         setIsModalOpen(false)
+        toast.success('Modification Réussie')
     }
 
     const renderCell = (item: any, header: string) => {
