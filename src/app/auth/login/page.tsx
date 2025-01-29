@@ -3,7 +3,7 @@ import React from 'react';
 import * as Form from '@radix-ui/react-form';
 import Header from '../../components/header';
 import '@/app/style.css';
-import FloatingLabelInput from '@/app/components/floatingLabelInput';
+import FloatingLabelInput from '@/components/floatingLabelInput';
 import Link from 'next/link';
 
 export default function LoginPage() {

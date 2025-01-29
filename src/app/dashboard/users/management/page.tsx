@@ -1,16 +1,14 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 'use client';
 import { useState } from "react";
-import { EditModal } from "@/app/components/dashboard/editModal";
-import FloatingLabelInput from "@/app/components/floatingLabelInput";
+import { EditModal } from "@/components/dashboard/editModal";
+import FloatingLabelInput from "@/components/floatingLabelInput";
 import * as Form from "@radix-ui/react-form";
 import { Close } from "@radix-ui/react-dialog"; 
-import { SuccessModal } from "@/app/components/dashboard/successModal";
 
 export default function UserManagement() {
 
-    const [success, setSuccess] = useState(false)
+    const [isModalOpen, setIsModalOpen] = useState(false)
 
     return(
         <div className="w-100 border h-100 mt-4">
@@ -75,6 +73,8 @@ export default function UserManagement() {
                                     </button>
                                 </div>
                             } 
+                            isOpen={isModalOpen}
+                            onOpenChange={setIsModalOpen}
                         />
 
                         <EditModal 
@@ -102,6 +102,8 @@ export default function UserManagement() {
                                     </button>
                                 </div>
                             } 
+                            isOpen={isModalOpen}
+                            onOpenChange={setIsModalOpen}
                         />
 
                         <EditModal 
@@ -129,13 +131,10 @@ export default function UserManagement() {
                                     </button>
                                 </div>
                             } 
+                            isOpen={isModalOpen}
+                            onOpenChange={setIsModalOpen}
                         />
                         
-                        {
-                            success && (
-                                <SuccessModal />
-                            )
-                        }
                         
                     </div>
                 </div>

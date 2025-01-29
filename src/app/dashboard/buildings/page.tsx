@@ -1,7 +1,7 @@
-import Table from "@/app/components/dashboard/tables"
+import Table from "@/components/dashboard/tables"
 import { organizationsData, orgHeader } from "@/app/constants"
-import { DashboardHeader } from "@/app/components/dashboard/dashboardHeader"
-import FloatingLabelInput from "@/app/components/floatingLabelInput"
+import { DashboardHeader } from "@/components/dashboard/dashboardHeader"
+import FloatingLabelInput from "@/components/floatingLabelInput"
 import * as Form from "@radix-ui/react-form"
 
 export default function Buildings () {

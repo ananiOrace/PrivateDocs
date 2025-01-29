@@ -1,7 +1,7 @@
 'use client';
 import { ReactNode, useState } from "react";
-import { Sidebar } from "../components/dashboard/sidebar";
-import Header from "../components/dashboard/header";
+import { Sidebar } from "@/components/dashboard/sidebar";
+import Header from "@/components/dashboard/header";
 
 export default function Dashboard({ children }: { children: ReactNode}) {
 

@@ -1,7 +1,7 @@
-import { DashboardHeader } from "@/app/components/dashboard/dashboardHeader"
+import { DashboardHeader } from "@/components/dashboard/dashboardHeader"
 import { adminData, adminHeader } from "@/app/constants"
-import FloatingLabelInput from "@/app/components/floatingLabelInput"
-import Table from "@/app/components/dashboard/tables"
+import FloatingLabelInput from "@/components/floatingLabelInput"
+import Table from "@/components/dashboard/tables"
 
 export default function User () {
     return(
