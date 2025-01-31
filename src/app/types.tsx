@@ -80,3 +80,11 @@ export interface TableDataItem {
   email: string,
   status: string,
 }
+
+export type SidebarContextType = {
+  isOpen: boolean;
+  setIsOpen: (val: boolean) => void;
+  width: number;
+  isMobile: boolean;
+  toggleSidebar: () => void | undefined;
+};
