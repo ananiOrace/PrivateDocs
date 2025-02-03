@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import * as Form from '@radix-ui/react-form';
-import Header from '../../components/header';
+import Header from '@/components/header';
 import '@/app/style.css';
 import FloatingLabelInput from '@/components/floatingLabelInput';
 import Link from 'next/link';
