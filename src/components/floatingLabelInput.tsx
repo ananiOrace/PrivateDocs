@@ -11,7 +11,9 @@ export default function FloatingLabelInput({
     type, 
     options,
     button,
-    showPasswordToggle = false 
+    showPasswordToggle = false,
+    name,
+    defaultValue
   }: FloatingLabelInputProps) {
 
     const [showPassword, setShowPassword] = useState(false);
@@ -27,6 +29,8 @@ export default function FloatingLabelInput({
                   <select 
                     className="form-control rounded-pill px-3 py-3"
                     required
+                    name={name}
+                    defaultValue={defaultValue}
                   >
                     {options?.map((option, index) => (
                       <option key={index} value={option}>{option}</option>
@@ -42,9 +46,11 @@ export default function FloatingLabelInput({
              <div className="">
                <Form.Control asChild>
                  <input
+                   name={name}
                    type={showPassword ? "text" : "password"}
                    placeholder={placeholder}
                    className="form-control rounded-pill px-3 py-3"
+                   defaultValue={defaultValue}
                    required
                  />
                </Form.Control>
@@ -73,6 +79,8 @@ export default function FloatingLabelInput({
                     placeholder={placeholder}
                     className="form-control rounded-pill px-3 py-3"
                     required
+                    name={name}
+                    defaultValue={defaultValue}
                   />
                 </Form.Control>
                   {button}

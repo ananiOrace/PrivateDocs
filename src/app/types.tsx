@@ -55,10 +55,28 @@ export interface FloatingLabelInputProps {
   type: InputType;
   options?: string[]; 
   showPasswordToggle?: boolean; 
-  button?: ReactNode
+  button?: ReactNode,
+  name?: string,
+  defaultValue?: any
 }
 
 export interface tableHeaderTypes {
     label: string,
     style?: string
+}
+
+export interface DeleteModalProps {
+    title: string, 
+    content: string, 
+    name: string, 
+    onDelete: () => void
+}
+
+export interface TableDataItem {
+  id: number,
+  name?: string,
+  users?: number,
+  admin: { name: string, initials: string },
+  email: string,
+  status: string,
 }
