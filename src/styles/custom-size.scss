@@ -1,0 +1,9 @@
+
+    @for $i from 1 through 100 {
+      .haut-#{$i} {
+        height: #{$i}px !important;
+      }
+      .larg-#{$i} {
+        width: #{$i}px !important;
+      }
+    }

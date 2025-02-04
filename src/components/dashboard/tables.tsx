@@ -1,7 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import { Pencil1Icon, TrashIcon } from "@radix-ui/react-icons";
+import {
+  Pencil1Icon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+} from "@radix-ui/react-icons";
 import { Badge, Avatar } from "@radix-ui/themes";
 import { TableProps, TableDataItem } from "@/app/types";
 import { EditModal } from "./editModal";
@@ -314,19 +318,23 @@ export default function Table({
       </div>
 
       {/* Pagination */}
-      <div className="d-flex justify-content-between align-items-center p-3 bg-white border-top">
-        <div className="text-muted">
+      <div className="d-flex justify-content-end align-items-center p-3 bg-white border-top">
+        {/* <div className="text-muted">
           Affichage {startIndex + 1}-{endIndex} sur {data.length} éléments
-        </div>
+        </div> */}
         <nav aria-label="Page navigation">
           <ul className="pagination mb-0">
-            <li className={`page-item ${pageIndex === 0 ? "disabled" : ""}`}>
+            <li
+              className={`mr-1 d-flex justify-content-center align-items-center haut-38 larg-38 ${
+                pageIndex === 0 ? "disabled" : ""
+              }`}
+            >
               <button
-                className="page-link"
+                className=""
                 onClick={() => handlePageChange(pageIndex - 1)}
                 disabled={pageIndex === 0}
               >
-                Précédent
+                <ChevronLeftIcon className="" width={15} height={30} />
               </button>
             </li>
 
@@ -351,12 +359,13 @@ export default function Table({
               return (
                 <li
                   key={idx}
-                  className={`page-item ${pageIndex === idx ? "active" : ""}`}
+                  className={`mx-1 text-center rounded-md ${
+                    pageIndex === idx
+                      ? "bg-primary bg-opacity-25 haut-38 larg-38 p-2 text-primary"
+                      : "haut-38 larg-38 p-2 text-muted"
+                  }`}
                 >
-                  <button
-                    className="page-link"
-                    onClick={() => handlePageChange(idx)}
-                  >
+                  <button className="" onClick={() => handlePageChange(idx)}>
                     {idx + 1}
                   </button>
                 </li>
@@ -364,16 +373,16 @@ export default function Table({
             })}
 
             <li
-              className={`page-item ${
+              className={`haut-38 larg-38 d-flex justify-content-center align-items-center ml-1 ${
                 pageIndex >= totalPages - 1 ? "disabled" : ""
               }`}
             >
               <button
-                className="page-link"
+                className=""
                 onClick={() => handlePageChange(pageIndex + 1)}
                 disabled={pageIndex >= totalPages - 1}
               >
-                Suivant
+                <ChevronRightIcon width={15} height={30} />
               </button>
             </li>
           </ul>
