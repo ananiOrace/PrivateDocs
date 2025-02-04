@@ -77,7 +77,7 @@ export default function Table({
     toast.success("Modification Réussie");
   };
 
-  const renderCell = (item: any, header: string) => {
+  const renderCell = (item: TableDataItem, header: string) => {
     switch (header) {
       case "Organisations":
         return item.name;
@@ -99,7 +99,7 @@ export default function Table({
         return (
           <div className="d-flex align-items-center">
             <Avatar
-              fallback={item.admin?.initials || item.initials}
+              fallback={item.admin?.initials}
               radius="full"
               color="blue"
               variant="soft"
