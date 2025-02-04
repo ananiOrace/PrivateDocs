@@ -1,5 +1,5 @@
-import Stats from "../components/dashboard/stats";
-import Table from "../components/dashboard/tables";
+import Stats from "@/components/dashboard/stats";
+import Table from "@/components/dashboard/tables";
 
 import { statsData, organizationsData, orgHeader } from "../constants";
 import '../style.css'

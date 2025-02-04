@@ -12,8 +12,8 @@ export const statsData: statsType[] = [
 
 export const adminHeader: tableHeaderTypes[] = [
   {
-    label: "",
-    style: "p-3 d-none d-sm-table-cell"
+    label: "checkbox",
+    style: "p-1 d-none d-sm-table-cell"
   }, 
   {
     label: "Administrateurs",
@@ -35,8 +35,8 @@ export const adminHeader: tableHeaderTypes[] = [
 
 export const orgHeader: tableHeaderTypes[] = [
   {
-    label: "",
-    style: "p-3 d-none d-sm-table-cell"
+    label: "checkbox",
+    style: "p-1 d-none d-sm-table-cell"
   }, 
   {
     label: "Organisations",

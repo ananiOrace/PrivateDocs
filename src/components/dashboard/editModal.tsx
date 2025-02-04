@@ -2,9 +2,9 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { Cross1Icon } from "@radix-ui/react-icons";
 import { ReactNode } from "react";
 
-export function EditModal({ display, title, content, button } : {display: ReactNode, title: string, content: ReactNode, button: ReactNode}) {
+export function EditModal({ display, title, content, button, isOpen, onOpenChange } : {display: ReactNode, title: string, content: ReactNode, button: ReactNode, isOpen: boolean, onOpenChange: (open: boolean) => void}) {
     return(
-        <Dialog.Root>
+        <Dialog.Root open={isOpen} onOpenChange={onOpenChange}>
             <Dialog.Trigger asChild>
                 {display}
             </Dialog.Trigger>
@@ -15,9 +15,10 @@ export function EditModal({ display, title, content, button } : {display: ReactN
                     
                     {content}
                     
+                        
                     {button}
 
-                    <Dialog.Close>
+                    <Dialog.Close onClick={() => onOpenChange(false)}>
                         <Cross1Icon width={20} height={20} className="position-absolute top-0 end-0 m-3 text-muted" />
                     </Dialog.Close>
                 </Dialog.Content>
