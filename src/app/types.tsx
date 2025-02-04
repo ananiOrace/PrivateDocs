@@ -1,40 +1,40 @@
-import { ReactNode } from "react"
+import { ReactNode } from "react";
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 export interface itemTypes {
-    href: string,
-    type: string,
-    activeRoutes?: string[]
+  href: string;
+  type: string;
+  activeRoutes?: string[];
 }
 
 export interface statsType {
-    id: number,
-    title: string,
-    value: string | number,
-    icon: string,
-    color: string
+  id: number;
+  title: string;
+  value: string | number;
+  icon: string;
+  color: string;
 }
 
 export interface adminDatasTypes {
-    id: number,
-    admin: {
-      name: string,
-      initials: string
-    },
-    email: string,
-    status: string
+  id: number;
+  admin: {
+    name: string;
+    initials: string;
+  };
+  email: string;
+  status: string;
 }
 
 export interface tableDatasTypes {
-  id: number,
-  name: string,
-  users: number,
+  id: number;
+  name: string;
+  users: number;
   admin: {
-    name: string,
-    initials: string
-  },
-  email: string,
-  status: string
+    name: string;
+    initials: string;
+  };
+  email: string;
+  status: string;
 }
 
 export interface TableProps {
@@ -45,40 +45,42 @@ export interface TableProps {
     edit?: boolean;
     delete?: boolean;
   };
+  onSelect: (id: number, checked: boolean) => void;
+  selectedItems: Set<number>;
 }
 
-export type InputType = 'text' | 'email' | 'password' | 'select';
+export type InputType = "text" | "email" | "password" | "select";
 
 export interface FloatingLabelInputProps {
   label: string;
   placeholder?: string;
   type: InputType;
-  options?: string[]; 
-  showPasswordToggle?: boolean; 
-  button?: ReactNode,
-  name?: string,
-  defaultValue?: any
+  options?: string[];
+  showPasswordToggle?: boolean;
+  button?: ReactNode;
+  name?: string;
+  defaultValue?: any;
 }
 
 export interface tableHeaderTypes {
-    label: string,
-    style?: string
+  label: string;
+  style?: string;
 }
 
 export interface DeleteModalProps {
-    title: string, 
-    content: string, 
-    name: string, 
-    onDelete: () => void
+  title: string;
+  content: string;
+  name: string;
+  onDelete: () => void;
 }
 
 export interface TableDataItem {
-  id: number,
-  name?: string,
-  users?: number,
-  admin: { name: string, initials: string },
-  email: string,
-  status: string,
+  id: number;
+  name?: string;
+  users?: number;
+  admin: { name: string; initials: string };
+  email: string;
+  status: string;
 }
 
 export type SidebarContextType = {
@@ -88,3 +90,8 @@ export type SidebarContextType = {
   isMobile: boolean;
   toggleSidebar: () => void | undefined;
 };
+
+export interface UseSelectionProps<T> {
+  items: T[];
+  getItemId: (item: T) => number;
+}

@@ -10,12 +10,16 @@ export function DashboardHeader({
   addModalContent,
   searchBar,
   addModalButton,
+  isSelected,
+  onSelectAll,
 }: {
   title1: string;
   title2: string;
   addModalContent: ReactNode;
   searchBar: string;
   addModalButton: string;
+  isSelected: boolean;
+  onSelectAll: (checked: boolean) => void;
 }) {
   return (
     <div className="row row-cols-md-1 row-cols-lg-2 w-100 justify-content-between pt-4">
@@ -24,6 +28,8 @@ export function DashboardHeader({
           type="checkbox"
           className="form-check-input"
           style={{ width: "24px", height: "24px", borderRadius: "6px" }}
+          checked={isSelected}
+          onChange={(e) => onSelectAll(e.target.checked)}
         />
         <div className="d-flex justify-content-center bg-secondary bg-opacity-25 rounded-pill px-2 gap-3">
           <div className="">

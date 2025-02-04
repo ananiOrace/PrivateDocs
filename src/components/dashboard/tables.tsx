@@ -28,6 +28,8 @@ export default function Table({
   data: initialData,
   dataType,
   actions = { edit: false, delete: false },
+  onSelect,
+  selectedItems,
 }: TableProps) {
   const [data, setData] = useState<TableDataItem[]>(initialData);
   const [editingItem, setEditingItem] = useState<TableDataItem | null>(null);
@@ -88,6 +90,8 @@ export default function Table({
           <input
             type="checkbox"
             className="form-check-input"
+            checked={selectedItems.has(item.id)}
+            onChange={(e) => onSelect(item.id, e.target.checked)}
             style={{ width: "24px", height: "24px", borderRadius: "6px" }}
           />
         );
